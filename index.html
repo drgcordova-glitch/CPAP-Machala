@@ -139,16 +139,10 @@
   .hero-stats strong{display:block;font-size:26px;color:var(--verde-800);}
   .hero-stats span{font-size:13px;color:var(--gris-600);}
   .hero-visual{
-    background:linear-gradient(160deg,var(--verde-700),var(--verde-950));
-    border-radius:28px;height:380px;position:relative;overflow:hidden;
-    display:flex;align-items:center;justify-content:center;
+    border-radius:28px;height:380px;overflow:hidden;
     box-shadow:var(--sombra);
   }
-  .hero-visual svg{width:60%;height:60%;color:#fff;opacity:.95;}
-  .hero-visual::after{
-    content:"";position:absolute;inset:0;
-    background:radial-gradient(circle at 30% 20%, rgba(255,255,255,0.18), transparent 60%);
-  }
+  .hero-visual img{width:100%;height:100%;object-fit:cover;display:block;}
 
   /* Info apnea */
   .apnea{background:#fff;}
@@ -180,6 +174,7 @@
     display:flex;align-items:center;justify-content:center;
   }
   .prod-media svg{width:56px;height:56px;color:var(--verde-800);}
+  .prod-media img{width:100%;height:100%;object-fit:cover;}
   .prod-body{padding:22px;display:flex;flex-direction:column;gap:10px;flex:1;}
   .prod-tag{font-size:12px;font-weight:700;color:var(--verde-700);text-transform:uppercase;letter-spacing:.4px;}
   .prod-body h3{margin:0;font-size:19px;color:var(--verde-950);}
@@ -291,10 +286,7 @@
       </div>
     </div>
     <div class="hero-visual">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-        <path d="M12 3v2M12 19v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M3 12h2M19 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/>
-        <circle cx="12" cy="12" r="4.5"/>
-      </svg>
+      <img src="img/resvent-autocpap-mesa.jpg" alt="Equipo Auto-CPAP Resvent iBreeze con mascarilla, sobre una mesa">
     </div>
   </div>
 </section>
@@ -352,7 +344,7 @@
       </div>
       <div class="prod-card">
         <div class="prod-media">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3a9 9 0 1 0 9 9"/><path d="M12 3v9l6 3"/></svg>
+          <img src="img/resvent-autocpap-producto.jpg" alt="Auto-CPAP Resvent iBreeze">
         </div>
         <div class="prod-body">
           <span class="prod-tag">Auto-CPAP</span>
