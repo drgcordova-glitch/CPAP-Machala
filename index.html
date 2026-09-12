@@ -163,7 +163,7 @@
   .productos .eyebrow{background:rgba(255,255,255,0.12);color:var(--verde-100);}
   .productos h2{color:#fff;}
   .productos p.lead{color:rgba(255,255,255,0.75);}
-  .prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px;}
+  .prod-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:44px;max-width:760px;margin-left:auto;margin-right:auto;}
   .prod-card{
     background:#fff;color:var(--gris-900);border-radius:var(--radius);
     padding:0;overflow:hidden;display:flex;flex-direction:column;
@@ -185,6 +185,10 @@
     margin-top:6px;text-align:center;background:var(--verde-100);color:var(--verde-800);
     padding:10px;border-radius:10px;font-weight:700;font-size:14px;
   }
+  .prod-price.prod-agotado{color:#b3423a;font-size:16px;}
+  .prod-cta.prod-cta-disabled{background:var(--gris-300);color:var(--gris-600);}
+  .mascarillas-titulo{margin-top:64px;text-align:center;color:#fff;font-size:24px;}
+  .mask-grid{grid-template-columns:repeat(3,1fr);max-width:960px;}
   .aviso-precios{
     text-align:center;margin-top:36px;color:rgba(255,255,255,0.65);font-size:13px;
   }
@@ -239,7 +243,7 @@
 
   @media (max-width:880px){
     .hero .container, .beneficios .container, .contacto-wrap{grid-template-columns:1fr;}
-    .apnea-grid, .prod-grid{grid-template-columns:1fr;}
+    .apnea-grid, .prod-grid, .mask-grid{grid-template-columns:1fr;}
     .nav-links{display:none;}
     .menu-toggle{display:block;}
     h1{font-size:32px;}
@@ -332,18 +336,6 @@
     <div class="prod-grid">
       <div class="prod-card">
         <div class="prod-media">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="7" width="16" height="12" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
-        </div>
-        <div class="prod-body">
-          <span class="prod-tag">CPAP fijo</span>
-          <h3>CPAP Básico</h3>
-          <p>Presión fija, ideal para pacientes con diagnóstico ya establecido. Incluye mascarilla y accesorios básicos.</p>
-          <div class="prod-price">$450</div>
-          <div class="prod-cta">Consultar disponibilidad</div>
-        </div>
-      </div>
-      <div class="prod-card">
-        <div class="prod-media">
           <img src="img/resvent-autocpap-producto.jpg" alt="Auto-CPAP Resvent iBreeze">
         </div>
         <div class="prod-body">
@@ -362,8 +354,45 @@
           <span class="prod-tag">BiPAP</span>
           <h3>BiPAP Doble Nivel</h3>
           <p>Dos niveles de presión para casos más complejos o pacientes con dificultad respiratoria adicional.</p>
-          <div class="prod-price">$950</div>
-          <div class="prod-cta">Consultar disponibilidad</div>
+          <div class="prod-price prod-agotado">Fuera de stock</div>
+          <div class="prod-cta prod-cta-disabled">No disponible</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="mascarillas-titulo">Mascarillas disponibles</h3>
+    <div class="prod-grid mask-grid">
+      <div class="prod-card">
+        <div class="prod-media">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12c0-3 2.7-4.5 6-4.5h6c3.3 0 6 1.5 6 4.5s-2.7 4.5-6 4.5H9c-3.3 0-6-1.5-6-4.5z"/><circle cx="9" cy="12" r="1"/><circle cx="15" cy="12" r="1"/></svg>
+        </div>
+        <div class="prod-body">
+          <span class="prod-tag">Almohadillas nasales</span>
+          <h3>BMC P2</h3>
+          <p>Mascarilla de almohadillas nasales, ligera y con mínimo contacto facial. Ideal para quienes prefieren libertad de movimiento al dormir.</p>
+          <div class="prod-cta">Consultar precio</div>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="prod-media">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 14c0-4 2.5-7 6-7s6 3 6 7-2.5 5-6 5-6-1-6-5z"/></svg>
+        </div>
+        <div class="prod-body">
+          <span class="prod-tag">Mascarilla nasal</span>
+          <h3>BMC N6S</h3>
+          <p>Mascarilla nasal que cubre solo la nariz, cómoda para dormir en distintas posiciones y con buen sellado.</p>
+          <div class="prod-cta">Consultar precio</div>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="prod-media">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 15c0-5 3-9 7-9s7 4 7 9-3 6-7 6-7-1-7-6z"/><path d="M9 15h6"/></svg>
+        </div>
+        <div class="prod-body">
+          <span class="prod-tag">Mascarilla oronasal</span>
+          <h3>BMC F6</h3>
+          <p>Mascarilla oronasal (facial), cubre nariz y boca. Recomendada para pacientes que respiran por la boca durante el sueño.</p>
+          <div class="prod-cta">Consultar precio</div>
         </div>
       </div>
     </div>
