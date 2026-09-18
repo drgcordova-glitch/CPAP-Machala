@@ -211,6 +211,18 @@
   .aviso-precios{
     text-align:center;margin-top:36px;color:rgba(255,255,255,0.65);font-size:13px;
   }
+  .info-box{
+    margin:36px auto 0;max-width:820px;background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.18);border-radius:14px;padding:18px 22px;
+    display:flex;gap:14px;align-items:flex-start;color:rgba(255,255,255,0.85);font-size:14px;line-height:1.6;
+  }
+  .info-box .icon{
+    flex-shrink:0;width:34px;height:34px;border-radius:10px;background:rgba(255,255,255,0.15);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .info-box .icon svg{width:18px;height:18px;color:#fff;}
+  .info-box strong{color:#fff;}
+  .info-box.small{max-width:960px;font-size:13px;padding:14px 20px;margin-top:24px;}
 
   /* Beneficios */
   .beneficios .container{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center;}
@@ -381,6 +393,15 @@
       </div>
     </div>
 
+    <div class="info-box">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+      </div>
+      <div>
+        <strong>Sobre nuestros equipos:</strong> son equipos más económicos, sin garantía de fábrica — pensados para que el tratamiento llegue a más personas. Cada equipo se prueba antes de la entrega y te mostramos un video de la prueba de funcionamiento.
+      </div>
+    </div>
+
     <h3 class="mascarillas-titulo">Mascarillas disponibles</h3>
     <div class="prod-grid mask-grid">
       <div class="prod-card">
@@ -405,6 +426,8 @@
         <div class="gallery-thumbs">
           <img class="thumb active" src="img/bmc-p2.jpg" data-full="img/bmc-p2.jpg" alt="">
           <img class="thumb" src="img/bmc-p2-2.jpg" data-full="img/bmc-p2-2.jpg" alt="">
+          <img class="thumb" src="img/bmc-p2-3.jpg" data-full="img/bmc-p2-3.jpg" alt="">
+          <img class="thumb" src="img/bmc-p2-4.webp" data-full="img/bmc-p2-4.webp" alt="">
         </div>
         <div class="prod-body">
           <span class="prod-tag">Almohadillas nasales</span>
@@ -428,6 +451,13 @@
           <div class="prod-cta">Consultar precio</div>
         </div>
       </div>
+    </div>
+
+    <div class="info-box small">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></svg>
+      </div>
+      <div>Mascarillas nuevas, entregadas selladas en su empaque original.</div>
     </div>
   </div>
 </section>
