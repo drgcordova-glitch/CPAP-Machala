@@ -186,6 +186,12 @@
   .mask-grid{grid-template-columns:repeat(3,1fr);max-width:960px;}
   .mask-grid .prod-media{background:var(--verde-50);padding:14px;}
   .mask-grid .prod-media img{object-fit:contain;}
+  .gallery-thumbs{display:flex;gap:8px;padding:10px 22px 0;background:#fff;}
+  .gallery-thumbs .thumb{
+    width:40px;height:40px;object-fit:contain;background:var(--verde-50);border-radius:8px;
+    border:2px solid transparent;cursor:pointer;padding:3px;box-sizing:border-box;
+  }
+  .gallery-thumbs .thumb.active{border-color:var(--verde-600);}
 
   .pdf-download{
     display:inline-flex;align-items:center;gap:8px;margin-top:22px;margin-bottom:8px;
@@ -378,8 +384,14 @@
     <h3 class="mascarillas-titulo">Mascarillas disponibles</h3>
     <div class="prod-grid mask-grid">
       <div class="prod-card">
-        <div class="prod-media">
-          <img src="img/resmed-airfit-n20.png" alt="Mascarilla nasal ResMed AirFit N20">
+        <div class="prod-media gallery">
+          <img class="gallery-main" src="img/resmed-airfit-n20.png" alt="Mascarilla nasal ResMed AirFit N20">
+        </div>
+        <div class="gallery-thumbs">
+          <img class="thumb active" src="img/resmed-airfit-n20.png" data-full="img/resmed-airfit-n20.png" alt="">
+          <img class="thumb" src="img/n20-2.jpg" data-full="img/n20-2.jpg" alt="">
+          <img class="thumb" src="img/n20-3.webp" data-full="img/n20-3.webp" alt="">
+          <img class="thumb" src="img/n20-4.png" data-full="img/n20-4.png" alt="">
         </div>
         <div class="prod-body">
           <span class="prod-tag">Mascarilla nasal</span>
@@ -389,8 +401,12 @@
         </div>
       </div>
       <div class="prod-card">
-        <div class="prod-media">
-          <img src="img/bmc-p2.jpg" alt="Mascarilla de almohadillas nasales BMC P2">
+        <div class="prod-media gallery">
+          <img class="gallery-main" src="img/bmc-p2.jpg" alt="Mascarilla de almohadillas nasales BMC P2">
+        </div>
+        <div class="gallery-thumbs">
+          <img class="thumb active" src="img/bmc-p2.jpg" data-full="img/bmc-p2.jpg" alt="">
+          <img class="thumb" src="img/bmc-p2-2.jpg" data-full="img/bmc-p2-2.jpg" alt="">
         </div>
         <div class="prod-body">
           <span class="prod-tag">Almohadillas nasales</span>
@@ -400,8 +416,12 @@
         </div>
       </div>
       <div class="prod-card">
-        <div class="prod-media">
-          <img src="img/react-health-rio-ii.jpg" alt="Mascarilla oronasal React Health Rio II">
+        <div class="prod-media gallery">
+          <img class="gallery-main" src="img/react-health-rio-ii.jpg" alt="Mascarilla oronasal React Health Rio II">
+        </div>
+        <div class="gallery-thumbs">
+          <img class="thumb active" src="img/react-health-rio-ii.jpg" data-full="img/react-health-rio-ii.jpg" alt="">
+          <img class="thumb" src="img/rio-ii-2.webp" data-full="img/rio-ii-2.webp" alt="">
         </div>
         <div class="prod-body">
           <span class="prod-tag">Mascarilla oronasal</span>
@@ -545,6 +565,19 @@
     <p><strong>VitalSueño</strong> — Venta de equipos para apnea del sueño en Ecuador.</p>
   </div>
 </footer>
+
+<script>
+  document.querySelectorAll('.gallery-thumbs').forEach(function(thumbs){
+    var main = thumbs.previousElementSibling.querySelector('.gallery-main');
+    thumbs.querySelectorAll('.thumb').forEach(function(thumb){
+      thumb.addEventListener('click', function(){
+        main.src = thumb.dataset.full;
+        thumbs.querySelectorAll('.thumb').forEach(function(t){ t.classList.remove('active'); });
+        thumb.classList.add('active');
+      });
+    });
+  });
+</script>
 
 </body>
 </html>
