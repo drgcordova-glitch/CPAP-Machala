@@ -113,11 +113,20 @@
 
   /* HERO */
   .hero{
-    background:linear-gradient(180deg,var(--verde-50) 0%, #ffffff 100%);
+    position:relative;overflow:hidden;padding:0;
+    background:#000 url('img/hero-despierta-listo.webp') center/cover no-repeat;
+    min-height:520px;display:flex;align-items:center;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(90deg, rgba(20,12,6,0.82) 0%, rgba(20,12,6,0.55) 45%, rgba(20,12,6,0.1) 80%);
   }
   .hero .container{
-    display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;
+    position:relative;z-index:2;padding:90px 24px;width:100%;
   }
+  .hero .eyebrow{background:rgba(255,255,255,0.15);color:#fff;}
+  .hero h1{color:#fff;max-width:600px;}
+  .hero p.lead{color:rgba(255,255,255,0.85);max-width:520px;}
   .hero-buttons{display:flex;gap:14px;margin-top:28px;flex-wrap:wrap;}
   .btn-primary{
     background:var(--verde-700);color:#fff;padding:14px 26px;border-radius:12px;font-weight:700;
@@ -125,19 +134,18 @@
   }
   .btn-primary:hover{background:var(--verde-800);}
   .btn-secondary{
-    background:#fff;color:var(--verde-800);padding:14px 26px;border-radius:12px;font-weight:700;
-    border:2px solid var(--verde-600);
+    background:rgba(255,255,255,0.1);color:#fff;padding:14px 26px;border-radius:12px;font-weight:700;
+    border:2px solid rgba(255,255,255,0.6);
   }
-  .btn-secondary:hover{background:var(--verde-100);}
+  .btn-secondary:hover{background:rgba(255,255,255,0.2);}
   .hero-stats{display:flex;gap:28px;margin-top:36px;flex-wrap:wrap;}
   .hero-stats div{min-width:110px;}
-  .hero-stats strong{display:block;font-size:26px;color:var(--verde-800);}
-  .hero-stats span{font-size:13px;color:var(--gris-600);}
-  .hero-visual{
-    border-radius:28px;height:380px;overflow:hidden;
-    box-shadow:var(--sombra);
+  .hero-stats strong{display:block;font-size:26px;color:var(--verde-500);}
+  .hero-stats span{font-size:13px;color:rgba(255,255,255,0.75);}
+  @media (max-width:880px){
+    .hero{min-height:600px;}
+    .hero::before{background:linear-gradient(180deg, rgba(20,12,6,0.55) 0%, rgba(20,12,6,0.82) 55%, rgba(20,12,6,0.9) 100%);}
   }
-  .hero-visual img{width:100%;height:100%;object-fit:cover;display:block;}
 
   /* Info apnea */
   .apnea{background:#fff;}
@@ -275,7 +283,7 @@
   footer strong{color:#fff;}
 
   @media (max-width:880px){
-    .hero .container, .beneficios .container, .contacto-wrap{grid-template-columns:1fr;}
+    .beneficios .container, .contacto-wrap{grid-template-columns:1fr;}
     .apnea-grid, .prod-grid, .mask-grid{grid-template-columns:1fr;}
     .nav-links{display:none;}
     .menu-toggle{display:block;}
@@ -310,21 +318,16 @@
 <!-- INICIO -->
 <section id="inicio" class="hero" aria-label="Inicio">
   <div class="container">
-    <div>
-      <span class="eyebrow">Apnea del sueño · Ecuador</span>
-      <h1>Despierta listo para tu día.</h1>
-      <p class="lead">Descansa mejor con Auto-CPAP y comienza cada mañana con energía, listo para el trabajo y para lo que venga. Vendemos equipos auto-CPAP, mascarillas y accesorios para el tratamiento de la apnea obstructiva del sueño.</p>
-      <div class="hero-buttons">
-        <a href="#productos" class="btn-primary">Ver productos</a>
-        <a href="#contacto" class="btn-secondary">Contáctanos</a>
-      </div>
-      <div class="hero-stats">
-        <div><strong>4</strong><span>Productos disponibles</span></div>
-        <div><strong>100%</strong><span>Atención en Ecuador</span></div>
-      </div>
+    <span class="eyebrow">Apnea del sueño · Ecuador</span>
+    <h1>Despierta listo para tu día.</h1>
+    <p class="lead">Descansa mejor con Auto-CPAP y comienza cada mañana con energía, listo para el trabajo y para lo que venga. Vendemos equipos auto-CPAP, mascarillas y accesorios para el tratamiento de la apnea obstructiva del sueño.</p>
+    <div class="hero-buttons">
+      <a href="#productos" class="btn-primary">Ver productos</a>
+      <a href="#contacto" class="btn-secondary">Contáctanos</a>
     </div>
-    <div class="hero-visual">
-      <img src="img/hero-despierta-listo.webp" alt="Hombre sonriente trabajando en su escritorio, descansado, con su equipo Auto-CPAP al lado">
+    <div class="hero-stats">
+      <div><strong>4</strong><span>Productos disponibles</span></div>
+      <div><strong>100%</strong><span>Atención en Ecuador</span></div>
     </div>
   </div>
 </section>
