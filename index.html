@@ -253,6 +253,24 @@
   .beneficios-visual svg{width:45%;height:45%;color:var(--verde-700);}
   .beneficios-visual img{width:100%;height:100%;object-fit:cover;display:block;}
 
+  /* FAQ */
+  .faq{background:#fff;}
+  .faq h2{max-width:760px;}
+  .faq-list{margin-top:32px;display:flex;flex-direction:column;gap:14px;max-width:860px;}
+  .faq-item{
+    border:1px solid var(--gris-300);border-radius:14px;padding:18px 22px;background:var(--verde-50);
+  }
+  .faq-item summary{
+    cursor:pointer;font-weight:700;color:var(--verde-800);font-size:16px;list-style:none;
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{
+    content:"+";font-size:22px;font-weight:400;color:var(--verde-700);flex-shrink:0;line-height:1;
+  }
+  .faq-item[open] summary::after{content:"–";}
+  .faq-item p{margin:14px 0 0;color:var(--gris-600);font-size:15px;line-height:1.6;}
+
   /* Contacto */
   .contacto{background:var(--verde-50);}
   .contacto-wrap{
@@ -547,6 +565,28 @@
         </div>
         <p class="video-caption">CPAP: limpieza y desinfección — explicado por personal de enfermería</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="container">
+    <span class="eyebrow">Dudas frecuentes</span>
+    <h2>Preguntas frecuentes sobre la elección de un equipo CPAP en Ecuador</h2>
+    <div class="faq-list">
+      <details class="faq-item" open>
+        <summary>¿Cuál es la mejor máquina CPAP en Ecuador?</summary>
+        <p>No existe una única máquina "mejor" para todos. La más adecuada es aquella con la que respiras cómodamente, combinada con una mascarilla que se ajuste bien a tu rostro. Compara modelos y consulta tus dudas antes de decidir.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Es mejor una máquina CPAP más cara?</summary>
+        <p>No necesariamente. El precio suele reflejar funciones extra (pantalla, conectividad, humidificador integrado, menor ruido), pero lo que más influye en que uses el equipo cada noche es la comodidad, el ajuste de la mascarilla y el soporte postventa. Un equipo económico que toleras bien es mejor que uno costoso que terminas dejando de usar.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Las mascarillas más caras son mejores?</summary>
+        <p>No siempre. Una mascarilla más cara puede tener mejores materiales o más opciones de talla, pero lo que realmente importa es que selle bien y sea cómoda para tu rostro. A veces una opción más simple y económica funciona mejor para una persona que un modelo premium que no calza bien.</p>
+      </details>
     </div>
   </div>
 </section>
