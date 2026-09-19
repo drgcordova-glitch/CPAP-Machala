@@ -194,7 +194,10 @@
   .mask-grid{grid-template-columns:repeat(3,1fr);max-width:960px;}
   .mask-grid .prod-media{background:var(--verde-50);padding:14px;}
   .mask-grid .prod-media img{object-fit:contain;}
-  .prod-media-contain{background:var(--verde-50);padding:14px;height:300px;}
+  .prod-media-contain{
+    background:var(--verde-50);padding:0;aspect-ratio:1/1;height:auto;
+    border:12px solid var(--verde-700);box-sizing:border-box;
+  }
   .prod-media-contain img{object-fit:contain;}
   .gallery-thumbs{display:flex;gap:8px;padding:10px 22px 0;background:#fff;}
   .gallery-thumbs .thumb{
