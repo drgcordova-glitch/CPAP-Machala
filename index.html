@@ -622,21 +622,21 @@
         <h3>Estamos para ayudarte</h3>
         <p>Completa el formulario y te contactaremos con información sobre nuestros equipos para apnea del sueño en Ecuador.</p>
       </div>
-      <form class="contacto-form" onsubmit="return false;">
+      <form class="contacto-form" id="form-contacto">
         <label>Nombre completo</label>
-        <input type="text" placeholder="Tu nombre">
-        <label>Correo electrónico</label>
-        <input type="email" placeholder="tucorreo@ejemplo.com">
+        <input type="text" id="f-nombre" placeholder="Tu nombre" required>
+        <label>Correo electrónico (opcional)</label>
+        <input type="email" id="f-correo" placeholder="tucorreo@ejemplo.com">
         <label>Motivo de consulta</label>
-        <select>
+        <select id="f-motivo">
           <option>Quiero información de un Auto-CPAP</option>
           <option>Quiero información de una mascarilla</option>
           <option>Otra consulta</option>
         </select>
         <label>Mensaje</label>
-        <textarea placeholder="Cuéntanos qué necesitas..."></textarea>
-        <button type="submit">Enviar mensaje</button>
-        <p class="nota">* Formulario de demostración — aún no está conectado a un correo o WhatsApp real.</p>
+        <textarea id="f-mensaje" placeholder="Cuéntanos qué necesitas..." required></textarea>
+        <button type="submit">Enviar por WhatsApp</button>
+        <p class="nota">* Al enviar se abre WhatsApp con tu mensaje ya escrito, listo para confirmar el envío.</p>
       </form>
     </div>
   </div>
@@ -665,6 +665,25 @@
       });
     });
   });
+
+  var formContacto = document.getElementById('form-contacto');
+  if (formContacto) {
+    formContacto.addEventListener('submit', function(e){
+      e.preventDefault();
+      var nombre = document.getElementById('f-nombre').value.trim();
+      var correo = document.getElementById('f-correo').value.trim();
+      var motivo = document.getElementById('f-motivo').value;
+      var mensaje = document.getElementById('f-mensaje').value.trim();
+
+      var texto = 'Hola VitalSueño, soy ' + nombre + '.\n' +
+        'Motivo: ' + motivo + '\n' +
+        (correo ? 'Correo: ' + correo + '\n' : '') +
+        'Mensaje: ' + mensaje;
+
+      var url = 'https://wa.me/593982799074?text=' + encodeURIComponent(texto);
+      window.open(url, '_blank');
+    });
+  }
 </script>
 
 </body>
